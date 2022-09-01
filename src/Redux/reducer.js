@@ -2,6 +2,7 @@ const initialStore = {
   data: [],
   starredRepo: [],
   moreDetails: {},
+  allContributorsCommit: [],
 };
 
 const rootReducer = (store = initialStore, action) => {
@@ -9,6 +10,8 @@ const rootReducer = (store = initialStore, action) => {
     return { ...store, starredRepo: action.payload };
   } else if (action.type === "moredetails") {
     return { ...store, moreDetails: action.payload };
+  } else if (action.type === "allContributorsCommit") {
+    return { ...store, allContributorsCommit: action.payload };
   }
   return { ...store };
 };
